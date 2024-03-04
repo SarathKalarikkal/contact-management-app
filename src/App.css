@@ -5,7 +5,10 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
+a{
+    color: white;
+    text-decoration: none;
+}
 body{
     background-color: rgb(37, 8, 30);
     position: relative;
@@ -25,6 +28,7 @@ body::after{
 .header{
     color: white;
     text-align: center;
+    margin-top: 3rem;
 }
 .App{
     max-width: 1320px;
@@ -35,7 +39,7 @@ body::after{
 }
 
 .container{
-    margin-top: 2rem;
+    margin-top: 5rem;
     width: auto;
     height: auto;
     padding: 2rem 1rem;
@@ -116,11 +120,13 @@ form button:hover{
 }
 .card div h3{
     font-size: 16px;
+    cursor: pointer;
 }
 .card div p{
     font-size: 13px;
     font-weight: 400;
     font-style: italic;
+    cursor: pointer;
 }
 .deleteIcon{
     color: white;
@@ -144,7 +150,31 @@ form button:hover{
     color: white;
 } 
 
+.addBtn{
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    color: white;
+    background-color:rgb(155, 4, 120) ;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.contactDetail{
+    color: white;
+    position: relative;
+}
 
+.backIcon{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: -5px;
+}
 
 @media screen and (min-width:560px){
     .container{

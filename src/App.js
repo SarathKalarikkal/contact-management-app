@@ -4,6 +4,12 @@ import Header from "./components/Header"
 import AddContact from "./components/AddContact"
 import ContactList from "./components/ContactList"
 import { v4 as uuidv4 } from 'uuid';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import ContactDetails from './components/contactDetails';
 
 
 function App() {
@@ -36,13 +42,20 @@ function App() {
   
 
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
      <Header />
-     <div className="container">
-     <AddContact addContactHandler={addContactHandler}/>
-     <ContactList contacts={contacts} removeContact={removeContact}/>
+      
+      <div className="container">
+      <Routes>
+        <Route path='/contact-management-app' exact element={<AddContact  addContactHandler={addContactHandler}/>} />
+        <Route path='/showList' exact element={<ContactList  contacts={contacts} removeContact={removeContact}/>} />
+        <Route path='/contact/:id'  element={<ContactDetails />}/>
+      </Routes>
      </div>
+      
     </div>
+    </Router>
   );
 }
 

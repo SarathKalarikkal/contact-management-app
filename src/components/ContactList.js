@@ -1,6 +1,8 @@
 import React from 'react'
 import ContactCard from "./ContactCard"
 import { RiErrorWarningLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
+
 
 function ContactList({contacts, removeContact}) {
 
@@ -8,6 +10,7 @@ function ContactList({contacts, removeContact}) {
     removeContact(id)
   }
 
+ 
 const renderList = contacts.map((contact)=>{
   return <ContactCard  contact ={contact} clickHandler={deteContactHandler}/>
 })
@@ -19,6 +22,9 @@ const renderList = contacts.map((contact)=>{
        <p className='userDetails'>User details :</p>
        {renderList}
        </>}
+       <Link to={'/contact-management-app'}>
+       <button className='addBtn'>Add contact</button>
+       </Link>
     </div>
   )
 }

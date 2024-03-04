@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
-function AddContact({addContactHandler}) {
+function AddContact(props) {
+
+const {addContactHandler} = props
+const navigate = useNavigate();
 
   const [formValue, setFormValue]= useState({
     userName : "",
@@ -20,6 +24,9 @@ function AddContact({addContactHandler}) {
       userName : "",
       email : ""
     })
+     
+    navigate('/showList');
+
   }
 
   return (
